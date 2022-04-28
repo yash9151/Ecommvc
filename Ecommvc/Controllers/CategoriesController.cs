@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ecommvc.Data;
 using Ecommvc.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Ecommvc.Controllers
 {
     public class CategoriesController : Controller
     {
         private readonly EcomdbContext _context;
+        private readonly ILogger<CategoriesController> logger;
 
-        public CategoriesController(EcomdbContext context)
+        public CategoriesController(EcomdbContext context,ILogger<CategoriesController> _logger)
         {
             _context = context;
+            logger = _logger;
         }
 
         // GET: Categories
@@ -28,6 +31,12 @@ namespace Ecommvc.Controllers
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            logger.LogTrace("Hello from details of Categories with log trace");
+            logger.LogDebug("Hello from log debug  with log trace");
+            logger.LogInformation("hello from log info  with log trace");
+            logger.LogWarning("hello from log warning  with log trace");
+            logger.LogError("hello from log error  with log trace");
+            logger.LogCritical("hello from log critical  with log trace");
             if (id == null)
             {
                 return NotFound();
