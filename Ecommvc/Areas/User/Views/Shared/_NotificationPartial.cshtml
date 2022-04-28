@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@if(TempData["ProductSuccess"]!=null)
+{
+    <div class="alert alert-success">
+        @TempData["ProductSuccess"]
+    </div>
+}
+                
+@if(TempData["CategorySuccess"]!=null)
+{
+    <div class="alert alert-success">
+        @TempData["CategorySuccess"]
+    </div>
+}
+
+ @if(TempData["CategoryDelete"]!=null)
+{
+    <div class="alert alert-success">
+        @TempData["CategoryDelete"]
+    </div>
+}
+
+ @if(TempData["ProductDelete"]!=null)
+{
+    <div class="alert alert-success">
+        @TempData["ProductDelete"]
+    </div>
+}

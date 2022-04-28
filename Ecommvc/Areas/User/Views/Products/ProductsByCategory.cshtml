@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Ecommvc.Models.Product>
+ 
+@{
+    ViewData["Title"] = "Products";
+}
+<h1 class="display-4 pb-5">@ViewBag.CategoryName</h1>
+ 
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4">
+            <img src="~/media/products/@item.Image" width="200" alt="No">
+            <h4>@item.ModelName</h4>
+ 
+            <div>
+                @Html.Raw(item.PDescription)
+            </div>
+            <p>
+                @item.UCost.ToString("C2")
+            </p>
+ 
+            <p>
+                <a href="" class="btn btn-primary">Add to cart</a>
+            </p>
+ 
+
+        </div>
+ 
+    }
+ 
+</div>
