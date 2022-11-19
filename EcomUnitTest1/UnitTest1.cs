@@ -1,3 +1,4 @@
+using Ecommvc.Controllers;
 using Moq;
 using System;
 using Xunit;
@@ -10,6 +11,8 @@ namespace EcomUnitTest1
         public void Test1()
         {
             //var mockRepo= new Mock<>
+           // HomeController homecontroller = new HomeController();
+
         }
     }
 }
